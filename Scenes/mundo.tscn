@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmotqduixuu3"]
+[gd_scene load_steps=3 format=3 uid="uid://cmotqduixuu3"]
+
+[ext_resource type="Texture2D" uid="uid://b7w4nlhoy1vhy" path="res://Assets/Fondo.jpg" id="1_uwdfk"]
 
 [sub_resource type="TileSet" id="TileSet_tv0mp"]
 
@@ -7,3 +9,9 @@
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tv0mp")
 format = 2
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(-1, -3)
+texture = ExtResource("1_uwdfk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
