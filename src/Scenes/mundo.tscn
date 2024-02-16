@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmotqduixuu3"]
+[gd_scene load_steps=5 format=3 uid="uid://cmotqduixuu3"]
 
 [ext_resource type="Texture2D" uid="uid://b7w4nlhoy1vhy" path="res://Assets/Fondo.jpg" id="1_uwdfk"]
+[ext_resource type="Texture2D" uid="uid://coqyve7kfhnyj" path="res://Assets/MarcoDOWN.png" id="2_bikk3"]
+[ext_resource type="Texture2D" uid="uid://b40kw7751lpwe" path="res://Assets/MarcoUp.png" id="3_eds08"]
 
 [sub_resource type="TileSet" id="TileSet_tv0mp"]
 
@@ -9,11 +11,19 @@
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(-1, -3)
 texture = ExtResource("1_uwdfk")
+offset = Vector2(0, -100)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tv0mp")
 format = 2
 
+[node name="AquiVaLaImagen" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_bikk3")
+
+[node name="Marco" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_eds08")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -100)
 zoom = Vector2(0.6, 0.6)
