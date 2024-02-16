@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmotqduixuu3"]
+
+[sub_resource type="TileSet" id="TileSet_tv0mp"]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tv0mp")
+format = 2
