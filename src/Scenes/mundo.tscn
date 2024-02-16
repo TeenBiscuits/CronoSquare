@@ -6,12 +6,14 @@
 
 [node name="Mundo" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_tv0mp")
-format = 2
-
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(-1, -3)
 texture = ExtResource("1_uwdfk")
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tv0mp")
+format = 2
+
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -100)
+zoom = Vector2(0.6, 0.6)
