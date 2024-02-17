@@ -60,7 +60,16 @@ async function fetchRandomSquareImage() {
 
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
-  imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
+  
+  // Random
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  var selectImagen = getRandomInt(6);
+
+  imageUrl = "https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/pics/" + selectImagen + ".jpg"
+
   return imageUrl;
 }
 
@@ -320,6 +329,8 @@ async function initializeGame() {
   const imageUrl = await fetchRandomSquareImage();
   const imageParts = await sliceImage(imageUrl);
   createGameGrid(imageParts);
+  const miImagenDeLaEsquina = document.getElementById("imagenDeLaEsquina");
+  miImagenDeLaEsquina.src = imageUrl;
 }
 
 // Start the game
