@@ -80,9 +80,9 @@
 
 .pieza {
   place-items: center;
-  background-color: #009578;
+  background-color:transparent;
   /* Color de fondo de cada pieza */
-  color: white;
+  color: black;
   /* Color del texto de cada pieza */
   display: flex;
   justify-content: center;
