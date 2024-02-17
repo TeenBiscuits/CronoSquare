@@ -6,30 +6,32 @@
 }
 
 @keyframes animacionColor {
+
   0% {
-    background-color: #3498db;
+    background-color: #8bc9f3;
   }
 
   25% {
-    background-color: #9b59b6;
+    background-color: #b365d2;
   }
 
   50% {
-    background-color: #e74c3c;
+    background-color: #e88b81;
   }
 
   75% {
-    background-color: #f1c40f;
+    background-color: #ecd36e;
   }
 
   100% {
-    background-color: #2ecc71;
+    background-color: #7ce8a9;
   }
 }
 
 .contenedor {
 
   padding: 20px;
+  padding-bottom: 25px;
   display: grid;
   grid-template-columns: 32.5% 35% 32.5%;
   /* Directamente establece las proporciones de los tres divs */
@@ -37,10 +39,14 @@
 
 /* Los divs internos heredarán su anchura del grid-template-columns */
 .texto {
+  line-height: 55px;
+  border-radius: 10px;
+  box-shadow: #ccc;
+  background-image: url(imagenes/png-clipart-paper-clip-paper-bag-notebook-notebook-miscellaneous-texture.png);
   margin-top: 5%;
   text-align: center;
   font-size: 35px;
-  font-family: fantasy;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-left: 15%;
   margin-right: 20%;
   border: 1px solid #ccc;
@@ -80,10 +86,9 @@
 
 .pieza {
   place-items: center;
-  background-color:transparent;
-  background-size: contain;
+  background-color: light rgb(12, 207, 12);
   /* Color de fondo de cada pieza */
-  color: white;
+  color: black;
   /* Color del texto de cada pieza */
   display: flex;
   justify-content: center;
@@ -95,6 +100,7 @@
 
 body {
   margin: 0;
+  background-image: url(imagenes/images.jpg)
 }
 
 h1 {
@@ -144,7 +150,7 @@ h1 {
 
 /* Cambia el fondo del slider cuando se marca el checkbox */
 input:checked+.slider {
-  background-color: #2196F3;
+  background-color: #001c83;
 }
 
 /* Mueve el slider a la derecha cuando se marca el checkbox */
@@ -155,4 +161,30 @@ input:checked+.slider:before {
 /* Opcional: agrega una sombra al slider */
 .slider:active:before {
   width: 28px;
+}
+
+.boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #001c83;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #7d0047;
+}
+
+.siguente {
+  display: inline-block;
+}
+
+.contenedor-centrado {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
 }
