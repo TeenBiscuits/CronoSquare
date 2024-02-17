@@ -1,4 +1,4 @@
-const accessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY';
+// const accessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY';
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('next-btn');
 const timerDisplay = document.getElementById('timer');
@@ -9,7 +9,7 @@ let originalEmptyTilePosition;
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
   try {
-    const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&query=square`);
+    const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${UnplashAccessKey}&query=square`);
     const data = await response.json();
     return data.urls.regular; // Return the regular-sized image URL
   } catch (error) {
