@@ -7,6 +7,7 @@ const timerDisplay = document.getElementById('timer');
 let emptyTilePosition;
 let originalEmptyTilePosition;
 let score = 0;
+let gameruning = true;
 
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
@@ -167,20 +168,22 @@ function createGameGrid(imageParts) {
 function tileClickHandler(event) {
   const clickedTile = event.target;
   const clickedPosition = parseInt(clickedTile.dataset.position);
+  if (gameruning) {
+    // Check if clicked tile is adjacent to the empty tile
+    if (isAdjacent(clickedPosition, emptyTilePosition)) {
+      // Swap the clicked tile with the empty tile
+      swapTiles(clickedTile);
+      emptyTilePosition = clickedPosition;
+    }
 
-  // Check if clicked tile is adjacent to the empty tile
-  if (isAdjacent(clickedPosition, emptyTilePosition)) {
-    // Swap the clicked tile with the empty tile
-    swapTiles(clickedTile);
-    emptyTilePosition = clickedPosition;
-  }
+    if (isPuzzleSolved()) {
+        const nb = document.getElementById("next-btn");
+        // nb.disabled = false;
 
-  if (isPuzzleSolved()) {
-      const nb = document.getElementById("next-btn");
-      // nb.disabled = false;
-
-      score += 100; // Increase score by 100 when puzzle is solved
-      updateScoreDisplay(); // Update the score display
+        score += 100; // Increase score by 100 when puzzle is solved
+        updateScoreDisplay(); // Update the score display
+        gameruning = false;
+    }
   }
 }
 
