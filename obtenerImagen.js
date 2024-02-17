@@ -20,6 +20,7 @@ async function fetchRandomSquareImage() {
 
 // Slice the image into parts
 async function sliceImage(imageUrl) {
+  // Uncoment esto cuando tengamos acceso a la app de nuevo
   imageUrl = 'https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/imagenPrueba.jpg?token=GHSAT0AAAAAACNYDOKMP6AYMAJYXCDAVALAZOQR6FA';
   const response = await fetch(imageUrl);
   const blob = await response.blob();
