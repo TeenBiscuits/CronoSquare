@@ -1,4 +1,4 @@
-const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
+//const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
 // const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('random-button');
@@ -42,7 +42,7 @@ async function fetchRandomSquareImage() {
     body: raw,
     redirect: 'follow'
   };
-  
+    /*
     try {
       const response = await fetch("https://stablediffusionapi.com/api/v3/text2img", requestOptions);
       const data = await response.json();
@@ -50,12 +50,13 @@ async function fetchRandomSquareImage() {
     } catch (error) {
       console.error('Error fetching image:', error);
     }
+    */
+    // IMPORTANTE QUITAR CUANTO YA VOLVAMOS A TENER ACCESO A LA API
+    return imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
 }
 
 // Slice the image into parts
 async function sliceImage(imageUrl) {
-  // Coment esto cuando tengamos acceso a la app de nuevo
-  imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
   // Esperar respuesta de la api
   const response = await fetch(imageUrl);
   const blob = await response.blob();
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (diferencia <= 0) {
       clearInterval(temporizador);
       display.textContent = "00:00:00";
-      alert("Tiempo finalizado!");
+      alert("¡Tiempo finalizado!");
       return;
     }
 
