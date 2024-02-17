@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CronoSquare | HackUDC 2024</title>
-    <link rel="stylesheet" href="graficos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
 </head>
 
 
@@ -13,7 +14,7 @@
     <audio id="musifondo" loop>
         <source src="musica/Fondo.mp3" type="audio/mpeg">
     </audio>
-    <audio id="sonidoClick" src="musica/soltar bloque - Minecraft (sound effect) (mp3cut.net).mp3"
+    <audio id="sonidoClick" src="musica/Clicks.mp3"
         preload="auto"></audio>
     <div class="fondo-animado">
         <h1 style="text-align: center;">Crono <img style="height: 75px;" src="./imagenes/Logo_ICON_sin-fondo.png"
@@ -21,7 +22,7 @@
         <h3 style="text-align: center;">HackUDC 2024</h3>
         <div class="contenedor">
             <div class="texto">
-                <img style="width: 60px;" src="imagenes/Green-Thumbtack-Transparent-Background.png" alt=""><br>
+                <img style="width: 60px;" src="imagenes/ChinchetaVerde.png" alt=""><br>
                 <div id="cuentaAtras">10:00:00</div>
                 <br>
                 <div id="score-display">Puntuación: 0</div>
@@ -34,7 +35,7 @@
             </div>
             <div class="puzzle" id="game-grid">
             </div>
-            <script src="obtenerImagen.js"></script>
+            <script src="script.js"></script>
 
             <div class="botones">
                 Imagen
@@ -46,9 +47,10 @@
                     <img style="width: 50px;" id="imagen" src="imagenes/patron.png" alt="">
                 </div>
                 <br><br>
-
-                <img id="imagenDeLaEsquina" src="" alt="Toggle Image" height="256" width="auto">
-                <script src="obtenerImagen.js"></script>
+                <div>
+                    <img id="imagenDeLaEsquina" src="" alt="Toggle Image" height="256" width="auto">
+                    <script src="script.js"></script>
+                </div>
                 <br>
                 Números <label class="switch">
                     <input type="checkbox" id="show-numbers">

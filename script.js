@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
       clearInterval(temporizador);
       display.textContent = "00:00:00";
       alert("¡Tiempo finalizado!");
+      gameruning = false;
       return;
     }
 

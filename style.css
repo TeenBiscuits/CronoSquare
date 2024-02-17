@@ -43,7 +43,7 @@
   line-height: 55px;
   border-radius: 10px;
   box-shadow: #ccc;
-  background-image: url(imagenes/png-clipart-paper-clip-paper-bag-notebook-notebook-miscellaneous-texture.png);
+  background-image: url(imagenes/PapelNotas.png);
   margin-top: 5%;
   text-align: center;
   font-size: 35px;
@@ -61,7 +61,7 @@
 .puzzle {
   box-shadow: 0px 20px 10px rgb(0, 0, 0, 0.5);
   border: 5px #009578;
-  background-image: url(imagenes/istockphoto-1217723755-170667a.jpg);
+  background-image: url(imagenes/FondoTablero.jpg);
   display: grid;
   column-width: 100px;
   grid-template-columns: repeat(4, 1fr);
@@ -72,7 +72,7 @@
 }
 
 .botones {
-  background-image: url(imagenes/png-clipart-paper-clip-paper-bag-notebook-notebook-miscellaneous-texture.png);
+  background-image: url(imagenes/PapelNotas.png);
   margin-top: 5%;
   border-radius: 10px;
   box-shadow: 0px 20px 10px rgb(0, 0, 0, 0.5);
@@ -109,7 +109,6 @@
 
 body {
   margin: 0;
-  background-image: url(imagenes/images.jpg)
 }
 
 h1 {
