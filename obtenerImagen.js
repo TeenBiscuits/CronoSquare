@@ -10,7 +10,7 @@ let emptyTilePosition;
 let originalEmptyTilePosition;
 let score = 0;
 let gameruning = true;
-
+let moves = 0;
 /*
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
@@ -60,7 +60,7 @@ async function fetchRandomSquareImage() {
 
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
-  
+
   // Random
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -79,7 +79,7 @@ async function sliceImage(imageUrl) {
   const response = await fetch(imageUrl);
   const blob = await response.blob();
   const image = await createImageBitmap(blob);
-  
+
   // Cortar la imagen 
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
@@ -99,7 +99,7 @@ async function sliceImage(imageUrl) {
       const partCtx = partCanvas.getContext('2d');
       partCtx.drawImage(canvas, -col * partWidth, -row * partHeight);
       const partUrl = partCanvas.toDataURL();
-      imageParts.push({url: partUrl, id: row * 4 + col + 1}); // Assign a unique ID to each tile
+      imageParts.push({ url: partUrl, id: row * 4 + col + 1 }); // Assign a unique ID to each tile
     }
   }
 
@@ -178,7 +178,7 @@ function createGameGrid(imageParts, DOMContentLoaded) {
   const emptyTileId = 16; // Largest ID
   let emptyTileIndex;
 
-  const showNumbers = document.getElementById('show-numbers'); 
+  const showNumbers = document.getElementById('show-numbers');
 
   shuffledParts.forEach((part, index) => {
     const puzzlePiece = document.createElement('div');
@@ -187,11 +187,11 @@ function createGameGrid(imageParts, DOMContentLoaded) {
     puzzlePiece.dataset.id = part.id;
     puzzlePiece.style.backgroundImage = `url('${part.url}')`;
 
-    
-    showNumbers.addEventListener('change', function() {
+
+    showNumbers.addEventListener('change', function () {
       const puzzlePieces = gameGrid.querySelectorAll('.pieza');
       const switchElement = document.getElementById('show-numbers');
-  
+
       if (switchElement && switchElement.checked !== undefined) {
         if (switchElement.checked) {
           puzzlePieces.forEach(piece => {
@@ -209,11 +209,11 @@ function createGameGrid(imageParts, DOMContentLoaded) {
       // This tile is the empty tile
       emptyTileIndex = index;
     }
-	
-	
+
+
     puzzlePiece.addEventListener('click', tileClickHandler);
     document.getElementById('random-button').addEventListener('click', initializeGame);
-    
+
 
     gameGrid.appendChild(puzzlePiece);
   });
@@ -236,6 +236,9 @@ function tileClickHandler(event) {
     if (isAdjacent(clickedPosition, emptyTilePosition)) {
       // Reproduce el sonido
       document.getElementById('musifondo').play();
+      moves += 1;
+      updateMoveDisplay();
+      console.log(moves);
       document.getElementById('sonidoClick').play();
       // Swap the clicked tile with the empty tile
       swapTiles(clickedTile);
@@ -243,9 +246,9 @@ function tileClickHandler(event) {
     }
 
     if (isPuzzleSolved()) {
-        score += 100; // Increase score by 100 when puzzle is solved
-        updateScoreDisplay(); // Update the score display
-        gameruning = false;
+      score += 100; // Increase score by 100 when puzzle is solved
+      updateScoreDisplay(); // Update the score display
+      gameruning = false;
     }
   }
 }
@@ -254,7 +257,7 @@ function tileClickHandler(event) {
 function swapTiles(clickedTile) {
   // Find the empty tile
   const emptyTile = gameGrid.querySelector('.pieza[data-position="' + emptyTilePosition + '"]');
-  
+
   // Swap their positions - Breaks position integrity
   /*
   const tempPosition = clickedTile.dataset.position;
@@ -288,7 +291,7 @@ function shuffle(array) {
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
-  
+
   return array;
 }
 
@@ -320,7 +323,12 @@ function isPuzzleSolved() {
 // Update the score display
 function updateScoreDisplay() {
   const scoreDisplay = document.getElementById('score-display');
-  scoreDisplay.textContent = `Score: ${score}`;
+  scoreDisplay.textContent = `Puntuación: ${score}`;
+}
+
+function updateMoveDisplay() {
+  const moveDisplay = document.getElementById('move-display');
+  moveDisplay.textContent = `Movimientos: ${moves}`;
 }
 
 // Initialize the game
