@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0
 -->
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> <!-- Web escrita en español-->
+
 
 <head>
     <meta charset="UTF-8">
@@ -18,16 +19,20 @@ SPDX-License-Identifier: Apache-2.0
 
 <body>
     <audio id="musifondo" loop>
+        <!-- Música en bucle de fondo libre de derechos de autor -->
         <source src="musica/Fondo.mp3" type="audio/mpeg">
     </audio>
-    <audio id="sonidoClick" src="musica/Clicks.mp3"
-        preload="auto"></audio>
-    <div class="fondo-animado">
+    <audio id="sonidoClick" src="musica/Clicks.mp3" preload="auto">
+        <!-- Música del Minecraft para cada vez que el usuario clica en un tile -->
+    </audio>
+    <div class="fondo-animado"> <!-- El fondo va cambiado de color según lo especificado en el .css -->
+        
         <h1 style="text-align: center;">Crono <img style="height: 75px;" src="./imagenes/Logo_ICON_sin-fondo.png"
                 alt=""> Square</h1>
         <h3 style="text-align: center;">HackUDC 2024</h3>
-        <div class="contenedor">
-            <div class="texto">
+
+        <div class="contenedor"> <!-- Div Principal -->
+            <div class="texto"> <!-- Contadores y Temporizador -->
                 <img style="width: 60px;" src="imagenes/ChinchetaVerde.png" alt=""><br>
                 <div id="cuentaAtras">10:00:00</div>
                 <br>
@@ -39,11 +44,11 @@ SPDX-License-Identifier: Apache-2.0
                         al Github</a>
                 </div>
             </div>
-            <div class="puzzle" id="game-grid">
+            <div class="puzzle" id="game-grid"> <!-- Game Grid utilizada por el programa para el tablero de juego -->
             </div>
             <script src="script.js"></script>
 
-            <div class="botones">
+            <div class="botones"> <!-- Opciones de dificultad del Juego -->
                 Imagen
                 <label class="switch">
                     <input type="checkbox" id="show-image" onclick="toggleImage()">
@@ -65,12 +70,12 @@ SPDX-License-Identifier: Apache-2.0
                 <br>
             </div>
         </div>
-        <div class="contenedor-centrado">
+        <div class="contenedor-centrado"> <!-- Botón para Generar una nueva imagen -->
             <div class="contenedor-botones">
                 <button id="random-button" class="boton avanzar">→ 🎲✨ Crear con IA ✨🎲 ←</button>
             </div>
         </div>
-        <div>
+        <div> <!-- Créditos <3 -->
             <br>
             <p style="text-align: center;">Creado por Pablo Portas López, Ángel Díaz Fernández y Alexandre Laredo
                 Fernández.</p>
@@ -78,7 +83,7 @@ SPDX-License-Identifier: Apache-2.0
     </div>
 
     <script>
-        // JavaScript function to toggle the image visibility
+        // JavaScript para ocultar la imagen original según el botón
         function toggleImage() {
             var image = document.getElementById("imagenDeLaEsquina");
             if (image.style.display === "block") {
@@ -91,7 +96,7 @@ SPDX-License-Identifier: Apache-2.0
 
 </body>
 <script>
-    // ERROR
+    // TODO: Solucional el ERROR.
     document.getElementById('botonClickeable').addEventListener('click', function () {
         var sonido = document.getElementById('sonidoClick');
         sonido.play();
