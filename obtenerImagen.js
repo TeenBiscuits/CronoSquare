@@ -1,7 +1,7 @@
 const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
 // const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');
-const nextButton = document.getElementById('next-btn');
+const nextButton = document.getElementById('random-button');
 const timerDisplay = document.getElementById('timer');
 
 let emptyTilePosition;
@@ -173,6 +173,7 @@ function createGameGrid(imageParts) {
 	
 	
     puzzlePiece.addEventListener('click', tileClickHandler);
+    document.getElementById('random-button').addEventListener('click', initializeGame);
     
 
     gameGrid.appendChild(puzzlePiece);
@@ -200,9 +201,6 @@ function tileClickHandler(event) {
     }
 
     if (isPuzzleSolved()) {
-        const nb = document.getElementById("next-btn");
-        // nb.disabled = false;
-
         score += 100; // Increase score by 100 when puzzle is solved
         updateScoreDisplay(); // Update the score display
         gameruning = false;
