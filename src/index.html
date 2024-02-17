@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Puzzle 4x4 con Espacio de Texto</title>
+    <link rel="stylesheet" href="graficos.css">
+</head>
+
+
+<body>
+    <div class="fondo-animado">
+        <h1 style="text-align: center;">Crono <img style="height: 35px;" src="../imagenes/Logo_ICON-removebg-preview.png"
+                alt=""> Square</h1>
+    <div class="contenedor">
+        <div class="puzzle" id="game-grid">
+        </div>
+		
+		<script src="obtenerImagen.js"></script>
+
+        <div class="texto">
+            00:00:00
+            <br><br><br><br><br><br>
+            Score: 1570
+            <br>
+        </div>
+    </div>
+    <button id="next-btn" disabled >Next Puzzle</button>
+    <div id="timer">15:00</div>
+    <div><label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    </div>
+</div>
+</body>
+
+</html>

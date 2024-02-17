@@ -1,0 +1,157 @@
+.fondo-animado {
+  margin-top: 0;
+  width: 100%;
+  height: 100vh;
+  animation: animacionColor 40s infinite alternate;
+}
+
+@keyframes animacionColor {
+  0% {
+    background-color: #3498db;
+  }
+
+  25% {
+    background-color: #9b59b6;
+  }
+
+  50% {
+    background-color: #e74c3c;
+  }
+
+  75% {
+    background-color: #f1c40f;
+  }
+
+  100% {
+    background-color: #2ecc71;
+  }
+}
+
+.contenedor {
+
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 32.5% 35% 32.5%;
+  /* Directamente establece las proporciones de los tres divs */
+}
+
+/* Los divs internos heredarán su anchura del grid-template-columns */
+.texto {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 35px;
+  font-family: fantasy;
+  margin-left: 15%;
+  margin-right: 20%;
+  border: 1px solid #ccc;
+  /* Borde para el área de texto */
+  padding: 10px;
+  /* Espacio interior para el área de texto */
+  height: fit-content;
+  /* Ajusta la altura al contenido */
+}
+
+.puzzle {
+  border: 5px #009578;
+  background-image: url(imagenes/istockphoto-1217723755-170667a.jpg);
+  display: grid;
+  column-width: 100px;
+  grid-template-columns: repeat(4, 1fr);
+  aspect-ratio: 1/1;
+  /* Cuatro columnas de tamaño igual */
+  gap: 5px;
+  /* Espacio entre las piezas del puzzle */
+}
+
+.botones {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 35px;
+  font-family: fantasy;
+  margin-left: 20%;
+  margin-right: 15%;
+  border: 1px solid #ccc;
+  /* Borde para el área de texto */
+  padding: 10px;
+  /* Espacio interior para el área de texto */
+  height: fit-content;
+  /* Ajusta la altura al contenido */
+}
+
+.pieza {
+  place-items: center;
+  background-color: #009578;
+  /* Color de fondo de cada pieza */
+  color: white;
+  /* Color del texto de cada pieza */
+  display: flex;
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido verticalmente */
+  /* Altura de cada pieza */
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Estilo base para el switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Oculta el input */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Estilo para el slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Cambia el fondo del slider cuando se marca el checkbox */
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+/* Mueve el slider a la derecha cuando se marca el checkbox */
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Opcional: agrega una sombra al slider */
+.slider:active:before {
+  width: 28px;
+}
