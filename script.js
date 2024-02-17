@@ -6,8 +6,9 @@ SPDX-License-Identifier: Apache-2.0
 
 // Se establecen las constantes iniciales, ambas keys de API para la generación de imágenes (ambas comentadas), la cuadrícula de juego, el botón de aleatorio (declarado como next),
 // la pantalla del temporizador, el botón de imagen y el botón de la activación de ésta.
-// const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
-// const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
+// Han sido eliminadas por seguridad
+// const UnplashAccessKey = '***'
+// const StabilityAIKey = '***'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('random-button');
 const timerDisplay = document.getElementById('timer');
