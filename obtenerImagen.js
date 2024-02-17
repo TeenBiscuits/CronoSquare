@@ -90,11 +90,34 @@ async function sliceImage(imageUrl) {
 // FUNCIONES PARA EL TIEMPO
 
 // Start the timer
-function startTimer() {
-  startTime = Date.now();
-  timerInterval = setInterval(updateTimer, 1000);
-  updateTimer(); // Added this line to update the timer immediately after starting
-}
+document.addEventListener("DOMContentLoaded", function () {
+  var duracion = 10 * 60 * 1000; // 5 minutos en milisegundos
+  var inicio = Date.now();
+  var fin = inicio + duracion;
+  var display = document.getElementById("cuentaAtras");
+
+  var temporizador = setInterval(function () {
+    var ahora = Date.now();
+    var diferencia = fin - ahora;
+
+    if (diferencia <= 0) {
+      clearInterval(temporizador);
+      display.textContent = "00:00:00";
+      alert("Tiempo finalizado!");
+      return;
+    }
+
+    var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+    var milisegundos = Math.floor((diferencia % 1000) / 10);
+
+    minutos = minutos < 10 ? "0" + minutos : minutos;
+    segundos = segundos < 10 ? "0" + segundos : segundos;
+    milisegundos = milisegundos < 10 ? "00" + milisegundos : milisegundos < 100 ? "0" + milisegundos : milisegundos;
+
+    display.textContent = minutos + ":" + segundos + ":" + milisegundos;
+  }, 10);
+});
 
 // Update the timer display
 function updateTimer() {
