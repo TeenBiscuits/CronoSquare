@@ -92,7 +92,7 @@ async function sliceImage(imageUrl) {
 
 // Start the timer
 document.addEventListener("DOMContentLoaded", function () {
-  var duracion = 10 * 60 * 1000; // 5 minutos en milisegundos
+  var duracion = 10 * 60 * 1000; // 10 minutos en milisegundos
   var inicio = Date.now();
   var fin = inicio + duracion;
   var display = document.getElementById("cuentaAtras");
