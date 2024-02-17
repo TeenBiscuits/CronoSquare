@@ -1,3 +1,9 @@
+/*
+SPDX-FileCopyrightText: 2024 Pablo Portas López <81629707+TeenBiscuits@users.noreply.github.com>
+
+SPDX-License-Identifier: Apache-2.0
+*/
+
 //const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
 // const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');

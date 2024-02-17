@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: CronoSquare
+Upstream-Contact: Pablo Portas Lopez <81629707+TeenBiscuits@users.noreply.github.com>
+Source: https://github.com/TeenBiscuits/CronoSquare
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...
