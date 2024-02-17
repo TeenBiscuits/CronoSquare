@@ -66,7 +66,7 @@ async function fetchRandomSquareImage() {
     return Math.floor(Math.random() * max);
   }
 
-  var selectImagen = getRandomInt(6);
+  var selectImagen = getRandomInt(10);
 
   imageUrl = "https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/pics/" + selectImagen + ".jpg"
 

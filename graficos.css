@@ -201,4 +201,5 @@ input:checked+.slider:before {
 #imagenDeLaEsquina {
   display: none;
   text-align: center;
+  padding: 4.0%;
 }
