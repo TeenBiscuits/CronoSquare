@@ -3,12 +3,14 @@
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('random-button');
 const timerDisplay = document.getElementById('timer');
+const imageButon = document.getElementById('show-image')
 
 let emptyTilePosition;
 let originalEmptyTilePosition;
 let score = 0;
 let gameruning = true;
 
+/*
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
   var myHeaders = new Headers();
@@ -42,17 +44,22 @@ async function fetchRandomSquareImage() {
     body: raw,
     redirect: 'follow'
   };
-    /*
-    try {
-      const response = await fetch("https://stablediffusionapi.com/api/v3/text2img", requestOptions);
-      const data = await response.json();
-      return data.output; // Return the regular-sized image URL
-    } catch (error) {
-      console.error('Error fetching image:', error);
-    }
-    */
-    // IMPORTANTE QUITAR CUANTO YA VOLVAMOS A TENER ACCESO A LA API
-    return imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
+  
+  
+  try {
+    const response = await fetch("https://stablediffusionapi.com/api/v3/text2img", requestOptions);
+    const data = await response.json();
+    return data.output; // Return the regular-sized image URL
+  } catch (error) {
+    console.error('Error fetching image:', error);
+  }
+  return imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
+}
+*/
+
+// Fetch a random square image from Unsplash
+async function fetchRandomSquareImage() {
+  return imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
 }
 
 // Slice the image into parts
@@ -129,6 +136,7 @@ function updateTimer() {
     timerDisplay.textContent = '00:00';
     stopTimer();
     // Optionally, you can add code here to handle when time runs out
+    gameruning = false;
   } else {
     timerDisplay.textContent = formatTime(remainingTime);
   }
@@ -237,6 +245,9 @@ function swapTiles(clickedTile) {
   emptyTile.textContent = tempNumber;
 }
 
+// Botón de Imagen
+
+
 // Fisher-Yates shuffle algorithm
 function shuffle(array) {
   let currentIndex = array.length;
@@ -285,6 +296,7 @@ function updateScoreDisplay() {
 
 // Initialize the game
 async function initializeGame() {
+  gameruning = true;
   const imageUrl = await fetchRandomSquareImage();
   const imageParts = await sliceImage(imageUrl);
   createGameGrid(imageParts);
