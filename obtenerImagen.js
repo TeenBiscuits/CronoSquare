@@ -225,6 +225,9 @@ function tileClickHandler(event) {
   if (gameruning) {
     // Check if clicked tile is adjacent to the empty tile
     if (isAdjacent(clickedPosition, emptyTilePosition)) {
+      // Reproduce el sonido
+      document.getElementById('musifondo').play();
+      document.getElementById('sonidoClick').play();
       // Swap the clicked tile with the empty tile
       swapTiles(clickedTile);
       emptyTilePosition = clickedPosition;

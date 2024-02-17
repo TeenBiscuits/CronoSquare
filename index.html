@@ -10,6 +10,11 @@
 
 
 <body>
+    <audio id="musifondo" loop>
+        <source src="musica/Fondo.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sonidoClick" src="musica/soltar bloque - Minecraft (sound effect) (mp3cut.net).mp3"
+        preload="auto"></audio>
     <div class="fondo-animado">
         <h1 style="text-align: center;">Crono <img style="height: 75px;" src="./imagenes/Logo_ICON_sin-fondo.png"
                 alt=""> Square</h1>
@@ -71,5 +76,11 @@
   </script>
 
 </body>
+<script>
+    document.getElementById('botonClickeable').addEventListener('click', function () {
+        var sonido = document.getElementById('sonidoClick');
+        sonido.play();
+    });
+</script>
 
 </html>
