@@ -20,12 +20,14 @@ async function fetchRandomSquareImage() {
 
 // Slice the image into parts
 async function sliceImage(imageUrl) {
-  // Uncoment esto cuando tengamos acceso a la app de nuevo
-  imageUrl = 'https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/imagenPrueba.jpg?token=GHSAT0AAAAAACNYDOKMP6AYMAJYXCDAVALAZOQR6FA';
+  // Coment esto cuando tengamos acceso a la app de nuevo
+  imageUrl = 'https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/imagenPrueba.jpg?token=GHSAT0AAAAAACNYDOKMXD2KJMUOMT4L5CDAZOQTYDQ';
+  // Esperar respuesta de la api
   const response = await fetch(imageUrl);
   const blob = await response.blob();
   const image = await createImageBitmap(blob);
   
+  // Cortar la imagen 
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = image.width;
