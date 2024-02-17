@@ -31,7 +31,7 @@ ANTIGUO CONTADOR DE CUANTO QUEDA DE HACKUDC
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 </div>
  
-**CronoSquare un pequeño minijuego de rompecabezas creado en HTML5 para la HackUDC 2024.**
+**CronoSquare 🎴🎲⌛ un pequeño minijuego de rompecabezas creado en HTML5 para la HackUDC 2024.**
 
 ### 💡 La Idea
 
