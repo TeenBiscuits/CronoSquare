@@ -5,9 +5,9 @@ const timerDisplay = document.getElementById('timer');
 
 let emptyTilePosition;
 let originalEmptyTilePosition;
-let score = 0;
 
 // Fetch a random square image from Unsplash
+
 async function fetchRandomSquareImage() {
   try {
     const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${UnplashAccessKey}&query=square`);
@@ -19,15 +19,21 @@ async function fetchRandomSquareImage() {
 }
 
 // Slice the image into parts
-
 async function sliceImage(imageUrl) {
+  imageUrl = 'https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/imagenPrueba.jpg?token=GHSAT0AAAAAACNYDOKMP6AYMAJYXCDAVALAZOQR6FA';
   const response = await fetch(imageUrl);
   const blob = await response.blob();
   const image = await createImageBitmap(blob);
   
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = image.width;
+  canvas.height = image.height;
+  ctx.drawImage(image, 0, 0);
+
   const imageParts = [];
-  const partWidth = image.width / 4;
-  const partHeight = image.height / 4;
+  const partWidth = canvas.width / 4;
+  const partHeight = canvas.height / 4;
 
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
@@ -35,8 +41,7 @@ async function sliceImage(imageUrl) {
       partCanvas.width = partWidth;
       partCanvas.height = partHeight;
       const partCtx = partCanvas.getContext('2d');
-      // Draw each slice from the original image
-      partCtx.drawImage(image, col * partWidth, row * partHeight, partWidth, partHeight, 0, 0, partWidth, partHeight);
+      partCtx.drawImage(canvas, -col * partWidth, -row * partHeight);
       const partUrl = partCanvas.toDataURL();
       imageParts.push({url: partUrl, id: row * 4 + col + 1}); // Assign a unique ID to each tile
     }
@@ -136,10 +141,7 @@ function tileClickHandler(event) {
 
   if (isPuzzleSolved()) {
       const nb = document.getElementById("next-btn");
-
-      score += 100; // Increase score by 100 when puzzle is solved
-      updateScoreDisplay();
-      const nextButton = document.getElementById('next-btn');
+      nb.disabled = false;
   }
 }
 
@@ -183,7 +185,7 @@ function shuffle(array) {
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
   */
-  
+
   return array;
 }
 
@@ -209,12 +211,6 @@ function isPuzzleSolved() {
     }
   }
   return true;
-}
-
-// Update the score display
-function updateScoreDisplay() {
-  const scoreDisplay = document.getElementById('score-display');
-  scoreDisplay.textContent = `Score: ${score}`;
 }
 
 // Initialize the game
