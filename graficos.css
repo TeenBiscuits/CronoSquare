@@ -90,6 +90,9 @@
   background-size: contain;
   /* Color de fondo de cada pieza */
   color: white;
+  -webkit-text-stroke: 1px black;
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
   /* Color del texto de cada pieza */
   display: flex;
   justify-content: center;

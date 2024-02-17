@@ -159,7 +159,7 @@ function stopTimer() {
 // FUNCIONES PARA LA GENERACIÓN DE LA CUADRÍCULA 4X4
 
 // Create the Fifteen Puzzle game grid
-function createGameGrid(imageParts) {
+function createGameGrid(imageParts, DOMContentLoaded) {
   gameGrid.innerHTML = ''; // Clear previous game grid
 
   // Shuffle image parts
@@ -169,13 +169,32 @@ function createGameGrid(imageParts) {
   const emptyTileId = 16; // Largest ID
   let emptyTileIndex;
 
+  const showNumbers = document.getElementById('show-numbers'); 
+
   shuffledParts.forEach((part, index) => {
     const puzzlePiece = document.createElement('div');
     puzzlePiece.classList.add('pieza');
     puzzlePiece.dataset.position = index;
     puzzlePiece.dataset.id = part.id;
     puzzlePiece.style.backgroundImage = `url('${part.url}')`;
-    puzzlePiece.textContent = part.id; // Tile number
+
+    
+    showNumbers.addEventListener('change', function() {
+      const puzzlePieces = gameGrid.querySelectorAll('.pieza');
+      const switchElement = document.getElementById('show-numbers');
+  
+      if (switchElement && switchElement.checked !== undefined) {
+        if (switchElement.checked) {
+          puzzlePieces.forEach(piece => {
+            piece.textContent = piece.dataset.id; // Set tile number to its ID
+          });
+        } else {
+          puzzlePieces.forEach(piece => {
+            piece.textContent = ''; // Clear tile numbers
+          });
+        }
+      }
+    });
 
     if (part.id === emptyTileId) {
       // This tile is the empty tile
