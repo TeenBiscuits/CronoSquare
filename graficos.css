@@ -189,3 +189,7 @@ input:checked+.slider:before {
   justify-content: center;
   align-items: center;
 }
+
+#imagenDeLaEsquina {
+  display: none;
+}

@@ -3,7 +3,8 @@
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('random-button');
 const timerDisplay = document.getElementById('timer');
-const imageButon = document.getElementById('show-image')
+const imageButon = document.getElementById('show-image');
+const imageTogle = document.getElementById('imagenDeLaEsquina');
 
 let emptyTilePosition;
 let originalEmptyTilePosition;
@@ -59,7 +60,8 @@ async function fetchRandomSquareImage() {
 
 // Fetch a random square image from Unsplash
 async function fetchRandomSquareImage() {
-  return imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
+  imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
+  return imageUrl;
 }
 
 // Slice the image into parts
@@ -245,9 +247,6 @@ function swapTiles(clickedTile) {
   emptyTile.textContent = tempNumber;
 }
 
-// Botón de Imagen
-
-
 // Fisher-Yates shuffle algorithm
 function shuffle(array) {
   let currentIndex = array.length;
@@ -259,7 +258,6 @@ function shuffle(array) {
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
   
-
   return array;
 }
 
