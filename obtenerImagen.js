@@ -1,5 +1,5 @@
 const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
-//const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
+// const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('next-btn');
 const timerDisplay = document.getElementById('timer');
@@ -9,12 +9,12 @@ let originalEmptyTilePosition;
 let score = 0;
 
 // Fetch a random square image from Unsplash
-
 async function fetchRandomSquareImage() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
+
     //"key": StabilityAIKey,
     "key": "key",
     "prompt": "grupo de informáticos compitiendo en su universidad",
@@ -177,7 +177,10 @@ function tileClickHandler(event) {
 
   if (isPuzzleSolved()) {
       const nb = document.getElementById("next-btn");
-      nb.disabled = false;
+      // nb.disabled = false;
+
+      score += 100; // Increase score by 100 when puzzle is solved
+      updateScoreDisplay(); // Update the score display
   }
 }
 
@@ -215,13 +218,13 @@ function shuffle(array) {
   let randomIndex;
 
   
-  
+  /*
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
-  
+  */
   
 
   return array;
@@ -241,9 +244,6 @@ function isAdjacent(position1, position2) {
 // Check if the puzzle is solved
 function isPuzzleSolved() {
   const puzzlePieces = gameGrid.querySelectorAll('.pieza');
-
-  score += 100; // Increase score by 100 when puzzle is solved
-  updateScoreDisplay(); // Update the score display
 
   for (let i = 0; i < puzzlePieces.length; i++) {
     const currentPosition = parseInt(puzzlePieces[i].dataset.position);
