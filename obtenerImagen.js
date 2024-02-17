@@ -1,3 +1,4 @@
+const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('next-btn');
 const timerDisplay = document.getElementById('timer');
