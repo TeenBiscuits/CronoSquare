@@ -29,7 +29,7 @@
 }
 
 .contenedor {
-
+  padding-top: 0;
   padding: 20px;
   padding-bottom: 25px;
   display: grid;
@@ -39,7 +39,7 @@
 
 /* Los divs internos heredarán su anchura del grid-template-columns */
 .texto {
-  box-shadow: 0px 20px 10px rgb(0,0,0,0.5);
+  box-shadow: 0px 20px 10px rgb(0, 0, 0, 0.5);
   line-height: 55px;
   border-radius: 10px;
   box-shadow: #ccc;
@@ -59,6 +59,7 @@
 }
 
 .puzzle {
+  box-shadow: 0px 20px 10px rgb(0, 0, 0, 0.5);
   border: 5px #009578;
   background-image: url(imagenes/istockphoto-1217723755-170667a.jpg);
   display: grid;
@@ -71,7 +72,10 @@
 }
 
 .botones {
+  background-image: url(imagenes/png-clipart-paper-clip-paper-bag-notebook-notebook-miscellaneous-texture.png);
   margin-top: 5%;
+  border-radius: 10px;
+  box-shadow: 0px 20px 10px rgb(0, 0, 0, 0.5);
   text-align: center;
   font-size: 35px;
   font-family: fantasy;
@@ -196,4 +200,5 @@ input:checked+.slider:before {
 
 #imagenDeLaEsquina {
   display: none;
+  text-align: center;
 }
