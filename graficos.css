@@ -87,6 +87,7 @@
 .pieza {
   place-items: center;
   background-color: light rgb(12, 207, 12);
+  background-size: contain;
   /* Color de fondo de cada pieza */
   color: black;
   /* Color del texto de cada pieza */
