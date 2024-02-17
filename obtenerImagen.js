@@ -1,5 +1,5 @@
 const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
-const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
+//const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('next-btn');
 const timerDisplay = document.getElementById('timer');
@@ -15,8 +15,9 @@ async function fetchRandomSquareImage() {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "key": StabilityAIKey,
-    "prompt": "ultra realistic close up portrait ((beautiful pale cyberpunk female with heavy black eyeliner))",
+    //"key": StabilityAIKey,
+    "key": "key",
+    "prompt": "grupo de informáticos compitiendo en su universidad",
     "negative_prompt": null,
     "width": "512",
     "height": "512",
@@ -53,7 +54,7 @@ async function fetchRandomSquareImage() {
 // Slice the image into parts
 async function sliceImage(imageUrl) {
   // Coment esto cuando tengamos acceso a la app de nuevo
-  //imageUrl = 'https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-2fb9fd49-01b4-4bed-b8da-49d779e191de.png';
+  imageUrl = 'https://imgs.search.brave.com/93PO8gJfSMm-l66S819Mb2jYBOi51tF6MXvBCZ_GjGY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL2FzdHJvbmF1/dC0xLmpwZWc_dHI9/dy0xNjAwLGMtYXRf/bWF4';
   // Esperar respuesta de la api
   const response = await fetch(imageUrl);
   const blob = await response.blob();
