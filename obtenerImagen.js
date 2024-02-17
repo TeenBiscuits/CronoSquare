@@ -1,4 +1,5 @@
 const UnplashAccessKey = 'Tv4pz2NLEpgwFQ0034shKC_Q_rh10nzVmIOMY-ULLhY'
+const StabilityAIKey = 'Bq7nC8nNKyTMLFwMY0eJfNKPgOPa2RHgJjVIPs3QxPmOgBHMFTfgBAwUbAne'
 const gameGrid = document.getElementById('game-grid');
 const nextButton = document.getElementById('next-btn');
 const timerDisplay = document.getElementById('timer');
@@ -9,19 +10,49 @@ let originalEmptyTilePosition;
 // Fetch a random square image from Unsplash
 
 async function fetchRandomSquareImage() {
-  try {
-    const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${UnplashAccessKey}&query=square`);
-    const data = await response.json();
-    return data.urls.regular; // Return the regular-sized image URL
-  } catch (error) {
-    console.error('Error fetching image:', error);
-  }
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "key": StabilityAIKey,
+    "prompt": "ultra realistic close up portrait ((beautiful pale cyberpunk female with heavy black eyeliner))",
+    "negative_prompt": null,
+    "width": "512",
+    "height": "512",
+    "samples": "1",
+    "num_inference_steps": "20",
+    "seed": null,
+    "guidance_scale": 7.5,
+    "safety_checker": "yes",
+    "multi_lingual": "no",
+    "panorama": "no",
+    "self_attention": "no",
+    "upscale": "no",
+    "embeddings_model": null,
+    "webhook": null,
+    "track_id": null
+  });
+  
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  
+    try {
+      const response = await fetch("https://stablediffusionapi.com/api/v3/text2img", requestOptions);
+      const data = await response.json();
+      return data.output; // Return the regular-sized image URL
+    } catch (error) {
+      console.error('Error fetching image:', error);
+    }
 }
 
 // Slice the image into parts
 async function sliceImage(imageUrl) {
   // Coment esto cuando tengamos acceso a la app de nuevo
-  imageUrl = 'https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/imagenPrueba.jpg?token=GHSAT0AAAAAACNYDOKMXD2KJMUOMT4L5CDAZOQTYDQ';
+  //imageUrl = 'https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-2fb9fd49-01b4-4bed-b8da-49d779e191de.png';
   // Esperar respuesta de la api
   const response = await fetch(imageUrl);
   const blob = await response.blob();
@@ -181,13 +212,13 @@ function shuffle(array) {
   let currentIndex = array.length;
   let randomIndex;
 
-  /*
+  
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
-  */
+  
 
   return array;
 }
