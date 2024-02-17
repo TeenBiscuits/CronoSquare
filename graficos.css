@@ -89,7 +89,7 @@
   background-color: light rgb(12, 207, 12);
   background-size: contain;
   /* Color de fondo de cada pieza */
-  color: black;
+  color: white;
   /* Color del texto de cada pieza */
   display: flex;
   justify-content: center;
