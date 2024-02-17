@@ -6,6 +6,7 @@ const timerDisplay = document.getElementById('timer');
 
 let emptyTilePosition;
 let originalEmptyTilePosition;
+let score = 0;
 
 // Fetch a random square image from Unsplash
 
@@ -213,11 +214,13 @@ function shuffle(array) {
   let randomIndex;
 
   
+  
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
+  
   
 
   return array;
@@ -237,6 +240,10 @@ function isAdjacent(position1, position2) {
 // Check if the puzzle is solved
 function isPuzzleSolved() {
   const puzzlePieces = gameGrid.querySelectorAll('.pieza');
+
+  score += 100; // Increase score by 100 when puzzle is solved
+  updateScoreDisplay(); // Update the score display
+
   for (let i = 0; i < puzzlePieces.length; i++) {
     const currentPosition = parseInt(puzzlePieces[i].dataset.position);
     const correctPosition = parseInt(puzzlePieces[i].dataset.id) - 1; // correct position is based on tile id
@@ -245,6 +252,12 @@ function isPuzzleSolved() {
     }
   }
   return true;
+}
+
+// Update the score display
+function updateScoreDisplay() {
+  const scoreDisplay = document.getElementById('score-display');
+  scoreDisplay.textContent = `Score: ${score}`;
 }
 
 // Initialize the game
