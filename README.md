@@ -21,7 +21,7 @@ ANTIGUO CONTADOR DE CUANTO QUEDA DE HACKUDC
 
 -->
 
-# CronoSquare
+# CronoSquare 🎴🎲⌛
 
 <div align="center">
 
@@ -52,6 +52,10 @@ En Windows Vista había un pequeño miniguego en el que nos inspiramos para crea
 3. **Temporizador**. El juego no es solo un reto de habilidad sino también de tiempo.
 4. **Nivel de ayuda**. No todos los jugadores están al mismo nivel, por eso se permite al jugador una pequeña ayuda opcional con la que ver la imagen original y/o unos pequeños números que usar como guía.
 5. **Stats**. El jugador puede comprobar en todo momento su número de movimientos y es recompensado con **100 puntos** cada vez que completa correctamente un puzle.
+
+## 📜 Licencia
+
+Este código esta publicado bajo la **Apache License 2.0**. Decidimos publicar nuestro código bajo esta licencia ya que nos gustaría dar la libertad de compratir, usar y editar nuestro código pero solicitamos a cambio un mero reconocimiento por el esfuerzo inicial.
 
 
 ## 💻 Contribuidores
