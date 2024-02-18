@@ -57,6 +57,10 @@ En Windows Vista había un pequeño miniguego en el que nos inspiramos para crea
 
 Este código esta publicado bajo la **Apache License 2.0**. Decidimos publicar nuestro código bajo esta licencia ya que nos gustaría dar la libertad de compratir, usar y editar nuestro código pero solicitamos a cambio un mero reconocimiento por el esfuerzo inicial.
 
+> ¿Qué es lo que más jode del mundo? Tener que poner el modo avión en un juego para quitar los anuncios. En nuestro juego, eso no pasa. **CronoSquare no tiene anuncios** y no los tendrá nunca. No tenéis que fiaros de nuestra palabra, aquí está el código, aunque incumpliésemos nuestra palabra, _este código es libre_.
+> 
+>  Ángel Díaz Fernández - 2024 (_Catador de videojuegos de la playstore profesional_)
+
 
 ## 💻 Contribuidores
 
