@@ -41,6 +41,8 @@ En Windows Vista había un pequeño miniguego en el que nos inspiramos para crea
 
 ## 📷 Capturas de Pantalla
 
+[![Gif-Demo](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/V%C3%ADdeo%20DEMO.gif?raw=true)](https://www.youtube.com/watch?v=JbIf-MH_fHw)
+
 ![Captura de pantalla-1](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/Captura%20de%20pantalla-1.png?raw=true)
 
 ![Captura de pantalla-2](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/Captura%20de%20pantalla-2.png?raw=true)
