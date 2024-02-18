@@ -31,9 +31,13 @@ ANTIGUO CONTADOR DE CUANTO QUEDA DE HACKUDC
 [![Build](https://github.com/TeenBiscuits/CronoSquare/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/TeenBiscuits/CronoSquare/actions/workflows/pages/pages-build-deployment)
 [![Web](https://img.shields.io/website?down_message=offline&up_message=online&label=Web&url=https%3A%2F%2Fteenbiscuits.github.io%2FCronoSquare)](https://teenbiscuits.github.io/CronoSquare)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-</div>
+[![Devpost](https://img.shields.io/badge/DEVPOST-HackUDC-003e54)](https://devpost.com/software/cronosquare)
  
 **CronoSquare 🎴🎲⌛ un pequeño minijuego de rompecabezas creado en HTML5 para la HackUDC 2024.**
+
+**🏆 Premio GPUL x INDITEX Tech al proyecto más original 🏆**
+
+</div>
 
 ### 💡 La Idea
 
@@ -78,3 +82,13 @@ El resto de imágenes (no generadas por IA) y los sonidos están licenciados baj
 - Pablo Portas López | [@TeenBiscuits](https://github.com/TeenBiscuits)
 - Ángel Díaz Fernández | [@AngelDF00](https://github.com/AngelDF00)
 - Alexandre Laredo Fernández | [@alex-ui](https://github.com/alex-ui)
+
+## 🏆 Ganadores
+
+<div align="center">
+
+### **🏆 Premio GPUL x INDITEX Tech al proyecto más original 🏆**
+
+![GANADORES](https://github.com/TeenBiscuits/CronoSquare/blob/main/GANADORES.jpg?raw=true)
+
+</div>
