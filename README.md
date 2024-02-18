@@ -4,10 +4,12 @@ SPDX-FileCopyrightText: 2024 Pablo Portas López <81629707+TeenBiscuits@users.no
 SPDX-License-Identifier: Apache-2.0
 -->
 
+<div align="center">
+ 
 [![CronoSquare Logo](https://raw.githubusercontent.com/TeenBiscuits/CronoSquare/main/imagenes/Logo%20Social.png)](https://teenbiscuits.github.io/CronoSquare)
 
-<div align="center">
 <h3>🌐🎮 <a href="https://teenbiscuits.github.io/CronoSquare">CronoSquare: El Videojuego</a> 🎮🌐</h3>
+
 </div>
 
 
@@ -41,11 +43,15 @@ En Windows Vista había un pequeño miniguego en el que nos inspiramos para crea
 
 ## 📷 Capturas de Pantalla
 
+<div align="center">
+
 [![Gif-Demo](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/V%C3%ADdeo%20DEMO.gif?raw=true)](https://www.youtube.com/watch?v=JbIf-MH_fHw)
 
 ![Captura de pantalla-1](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/Captura%20de%20pantalla-1.png?raw=true)
 
 ![Captura de pantalla-2](https://github.com/TeenBiscuits/CronoSquare/blob/main/imagenes/Captura%20de%20pantalla-2.png?raw=true)
+
+</div>
 
 ## 📖 Documentación
 
