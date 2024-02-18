@@ -71,6 +71,8 @@ Este código esta publicado bajo la **Apache License 2.0**. Decidimos publicar n
 
 Las imágenes propias y el logo de este proyecto están bajo la licencia **CC BY-NC 4.0**.
 
+El resto de imágenes (no generadas por IA) y los sonidos están licenciados bajo **CC BY 4.0**.
+
 ## 💻 Contribuidores
 
 - Pablo Portas López | [@TeenBiscuits](https://github.com/TeenBiscuits)
