@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Pablo Portas López <81629707+TeenBiscuits@users.noreply.github.com>
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Contributing
 
 En serio si estas leyendo esto dios te bendiga en la aventura de mejorar este código.
