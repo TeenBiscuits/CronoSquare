@@ -203,7 +203,7 @@ function createGameGrid(imageParts, DOMContentLoaded) {
     showNumbers.addEventListener('change', function () {
       const puzzlePieces = gameGrid.querySelectorAll('.pieza');
       const switchElement = document.getElementById('show-numbers');
-
+      
       if (switchElement && switchElement.checked !== undefined) {
         if (switchElement.checked) {
           puzzlePieces.forEach(piece => {
@@ -215,6 +215,8 @@ function createGameGrid(imageParts, DOMContentLoaded) {
           });
         }
       }
+
+      localStorage.setItem('showNumbers', switchElement.checked.toString());
     });
 
     // Condición que verifica que la pieza seleccionada es la ranura vacía.
@@ -226,7 +228,6 @@ function createGameGrid(imageParts, DOMContentLoaded) {
     
     puzzlePiece.addEventListener('click', tileClickHandler); // El listener analiza, con la función "tileClickHandler", si una de las cuatro casillas adyacentes a la seleccionada con el "clickEvent".
     document.getElementById('random-button').addEventListener('click', initializeGame); // El botón "random" inicia un nuevo juego, manteniendo la puntuación.
-
 
     gameGrid.appendChild(puzzlePiece); // Se le asigna cada una de las piezas (como "hijas") a la cuadrícula de juego.
   });
@@ -348,6 +349,25 @@ function updateMoveDisplay() {
   moveDisplay.textContent = `Movimientos: ${moves}`;
 }
 
+// Muestra u oculta los números en las piezas, según el estado del switch.
+function showTileNumbers() {
+  const puzzlePieces = gameGrid.querySelectorAll('.pieza');
+  puzzlePieces.forEach(piece => {
+    piece.textContent = piece.dataset.id; // Set tile number to its ID
+  });
+  
+  // Add event listener for changes in the "show numbers" switch
+  document.getElementById('show-numbers').addEventListener('change', function() {
+    const switchElement = document.getElementById('show-numbers');
+    localStorage.setItem('showNumbers', switchElement.checked.toString()); // Convierte el booleano del switch antes de guardar el dato en el caché del navegador.
+    
+    // Update tile numbers based on the switch state
+    if (switchElement.checked) {
+      showTileNumbers();
+    }
+  });
+}
+
 // Función asíncrona para inicializar el juego.
 async function initializeGame() {
   gameruning = true;
@@ -356,6 +376,18 @@ async function initializeGame() {
   createGameGrid(imageParts);
   const miImagenDeLaEsquina = document.getElementById("imagenDeLaEsquina");
   miImagenDeLaEsquina.src = imageUrl;
+
+  const switchElement = document.getElementById('show-numbers');
+  const showNumbers = localStorage.getItem('showNumbers');
+
+  if (showNumbers != null) {
+    switchElement.checked = JSON.parse(showNumbers);
+  }
+
+  // Condición necesaria para el botón aleatorio. El switch siempre comienza desactivado al recargar la página.
+  if (switchElement.checked) {
+    showTileNumbers();
+  }
 }
 
 // Inicialización del juego.
