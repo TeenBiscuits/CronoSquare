@@ -89,6 +89,6 @@ El resto de imágenes (no generadas por IA) y los sonidos están licenciados baj
 
 ### **🏆 Premio GPUL x INDITEX Tech al proyecto más original 🏆**
 
-![GANADORES](https://github.com/TeenBiscuits/CronoSquare/blob/main/IMG_1639?raw=true)
+![GANADORES](https://github.com/TeenBiscuits/CronoSquare/blob/main/IMG_1639.jpeg?raw=true)
 
 </div>
