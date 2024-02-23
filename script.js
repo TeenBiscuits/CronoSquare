@@ -361,7 +361,7 @@ function showTileNumbers() {
     const switchElement = document.getElementById('show-numbers');
     localStorage.setItem('showNumbers', switchElement.checked.toString()); // Convierte el booleano del switch antes de guardar el dato en el caché del navegador.
     
-    // Update tile numbers based on the switch state
+    // Condición para mostrar los números (no es necesario el else).
     if (switchElement.checked) {
       showTileNumbers();
     }

@@ -92,6 +92,18 @@ SPDX-License-Identifier: Apache-2.0
                 image.style.display = "block";
             }
         }
+
+        // Obtiene el estado del switch del localStorage para mostrar u ocultar la imagen de ayuda (o "imagenDeLaEsquina")
+        // No es necesario el setItem para guardar el dato
+        document.addEventListener('DOMContentLoaded', function() {
+            var imageToggleState = localStorage.getItem('imageToggleState');
+            var image = document.getElementById("imagenDeLaEsquina");
+            if (imageToggleState === 'false') {
+                image.style.display = 'none';
+            } else {
+                image.style.display = 'block';
+            }
+        });
     </script>
 
 </body>
