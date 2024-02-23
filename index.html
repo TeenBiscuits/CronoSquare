@@ -59,7 +59,7 @@ SPDX-License-Identifier: Apache-2.0
                 </div>
                 <br><br>
                 <div>
-                    <img id="imagenDeLaEsquina" src="" alt="Toggle Image" height="256" width="auto">
+                    <img id="imagenDeLaEsquina" src="" alt="Cargando..." height="256" width="auto">
                     <script src="script.js"></script>
                 </div>
                 <br>
@@ -85,24 +85,58 @@ SPDX-License-Identifier: Apache-2.0
     <script>
         // JavaScript para ocultar la imagen original según el botón
         function toggleImage() {
+            var isChecked = document.getElementById("show-image").checked; // Booleano para el botón de mostrar imagen (activado)
             var image = document.getElementById("imagenDeLaEsquina");
-            if (image.style.display === "block") {
-                image.style.display = "none";
-            } else {
+
+            // localStorage.getItem('imagenDeLaEsquina'.style.display);
+
+            if (image.style.display === "none" && isChecked) {
                 image.style.display = "block";
+            } else if (image.style.display === "block" && !isChecked) {
+                image.style.display = "none";
             }
+
+            // Update the toggle state in localStorage
+            // localStorage.setItem('imageToggleState', image.style.display === "none" ? "false" : "true");
+            localStorage.setItem("show-image", isChecked);
         }
 
         // Obtiene el estado del switch del localStorage para mostrar u ocultar la imagen de ayuda (o "imagenDeLaEsquina")
         // No es necesario el setItem para guardar el dato
+        
         document.addEventListener('DOMContentLoaded', function() {
-            var imageToggleState = localStorage.getItem('imageToggleState');
-            var image = document.getElementById("imagenDeLaEsquina");
-            if (imageToggleState === 'false') {
-                image.style.display = 'none';
-            } else {
-                image.style.display = 'block';
+            var isChecked;
+
+            // Check if localStorage is available
+            if (typeof(Storage) !== "undefined") {
+                // Retrieve data from localStorage if available
+                isChecked = localStorage.getItem('show-image');
             }
+
+            var image = document.getElementById("imagenDeLaEsquina");
+            var toggle = document.getElementById("show-image");
+
+            // Set the default toggle state if localStorage is empty
+            if (isChecked === null) {
+                isChecked = false; // Set default value to false
+            }
+            
+            if (isChecked === 'false') {
+                image.style.display = 'none';
+                localStorage.setItem("show-image", isChecked);
+                toggle.checked = false;
+            } else if (isChecked === 'true') {
+                image.style.display = 'block';
+                localStorage.setItem("show-image", isChecked);
+                toggle.checked = true;
+            } else {
+                image.style.display = 'none';
+                localStorage.setItem("show-image", isChecked);
+                toggle.checked = false;
+            }
+
+            // Add event listener for checkbox change event
+            toggle.addEventListener("change", toggleImage);
         });
     </script>
 
